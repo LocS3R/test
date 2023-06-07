@@ -1,0 +1,466 @@
+:root {
+  --primary-color: hsl(196, 78%, 61%);
+  --secondary-color: hsl(217, 15%, 83%);
+  --success-color: hsl(165, 58%, 55%);
+  --info-color: hsl(214, 79%, 65%);
+  --warning-color: hsl(43, 100%, 66%);
+  --danger-color: hsl(354, 81%, 63%);
+  --primary-color-darker: hsl(196, 68%, 54%);
+  --secondary-color-darker: hsl(215, 13%, 70%);
+  --success-color-darker: hsl(165, 55%, 48%);
+  --info-color-darker: hsl(214, 68%, 58%);
+  --warning-color-darker: hsl(39, 97%, 62%);
+  --danger-color-darker: hsl(354, 67%, 56%);
+  --primary-color-lighter: hsl(196, 78%, 81%);
+  --secondary-color-lighter: hsl(214, 16%, 92%);
+  --success-color-lighter: hsl(165, 58%, 75%);
+  --info-color-lighter: hsl(214, 79%, 85%);
+  --warning-color-lighter: hsl(43, 100%, 86%);
+  --danger-color-lighter: hsl(354, 81%, 83%);
+  --secondary-color-darkest: hsl(215, 11%, 30%);
+  --secondary-color-lightest: hsl(220, 1%, 98%);
+  --ease-in-quad: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  --ease-in-cubic: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  --ease-in-quart: cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  --ease-in-quint: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+  --ease-in-expo: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+  --ease-in-circ: cubic-bezier(0.6, 0.04, 0.98, 0.335);
+  --ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+  --ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
+  --ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+  --ease-out-circ: cubic-bezier(0.075, 0.82, 0.165, 1);
+  --ease-in-out-quad: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  --ease-in-out-cubic: cubic-bezier(0.645, 0.045, 0.355, 1);
+  --ease-in-out-quart: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
+  --ease-in-out-expo: cubic-bezier(1, 0, 0, 1);
+  --ease-in-out-circ: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  /* background: radial-gradient(ellipse at bottom, #0d1d31 0%, #0c0d13 100%); */
+  background-image: url("https://images2.alphacoders.com/123/1230308.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+}
+div img {
+  width: 25px;
+  height: 25px;
+}
+
+.genshin-items {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120%;
+  transform: rotate(-45deg);
+}
+
+.genshin-item {
+  --genshin-item-color: var(--primary-color);
+  /* --genshin-item-tail-length: 6em; */
+  /* --genshin-item-tail-height: 2px; */
+  /* --genshin-item-width: calc(var(--genshin-item-tail-length) / 6); */
+  --fall-duration: 9s;
+  --tail-fade-duration: var(--fall-duration);
+  position: absolute;
+  top: var(--top-offset);
+  left: 0;
+  width: var(--genshin-item-tail-length);
+  height: var(--genshin-item-tail-height);
+  /* color: var(--genshin-item-color); */
+  /* background: linear-gradient(45deg, currentColor, transparent); */
+  background: transparent;
+  border-radius: 50%;
+  filter: drop-shadow(0 0 6px currentColor);
+  transform: translate3d(104em, 0, 0);
+  animation: fall var(--fall-duration) var(--fall-delay) linear infinite,
+    tail-fade var(--tail-fade-duration) var(--fall-delay) ease-out infinite;
+}
+@media screen and (max-width: 750px) {
+  .genshin-item {
+    animation: fall var(--fall-duration) var(--fall-delay) linear infinite;
+  }
+}
+.genshin-item:nth-child(1) {
+  --genshin-item-tail-length: 5.93em;
+  --top-offset: 79.94vh;
+  --fall-duration: 9.371s;
+  --fall-delay: 1.412s;
+}
+.genshin-item:nth-child(2) {
+  --genshin-item-tail-length: 6.79em;
+  --top-offset: 50.23vh;
+  --fall-duration: 6.534s;
+  --fall-delay: 4.414s;
+}
+.genshin-item:nth-child(3) {
+  --genshin-item-tail-length: 7.29em;
+  --top-offset: 40.73vh;
+  --fall-duration: 10.148s;
+  --fall-delay: 3.199s;
+}
+.genshin-item:nth-child(4) {
+  --genshin-item-tail-length: 6.44em;
+  --top-offset: 26.06vh;
+  --fall-duration: 8.933s;
+  --fall-delay: 6.608s;
+}
+.genshin-item:nth-child(5) {
+  --genshin-item-tail-length: 7.17em;
+  --top-offset: 57.66vh;
+  --fall-duration: 6.797s;
+  --fall-delay: 7.106s;
+}
+.genshin-item:nth-child(6) {
+  --genshin-item-tail-length: 6.92em;
+  --top-offset: 25.27vh;
+  --fall-duration: 8.444s;
+  --fall-delay: 2.712s;
+}
+.genshin-item:nth-child(7) {
+  --genshin-item-tail-length: 5.65em;
+  --top-offset: 35.85vh;
+  --fall-duration: 6.807s;
+  --fall-delay: 3.413s;
+}
+.genshin-item:nth-child(8) {
+  --genshin-item-tail-length: 5.31em;
+  --top-offset: 42.08vh;
+  --fall-duration: 8.716s;
+  --fall-delay: 0.153s;
+}
+.genshin-item:nth-child(9) {
+  --genshin-item-tail-length: 5.89em;
+  --top-offset: 11.44vh;
+  --fall-duration: 8.109s;
+  --fall-delay: 3.687s;
+}
+.genshin-item:nth-child(10) {
+  --genshin-item-tail-length: 7.29em;
+  --top-offset: 48.13vh;
+  --fall-duration: 9.445s;
+  --fall-delay: 1.233s;
+}
+.genshin-item:nth-child(11) {
+  --genshin-item-tail-length: 7.08em;
+  --top-offset: 42.94vh;
+  --fall-duration: 8.712s;
+  --fall-delay: 7.178s;
+}
+.genshin-item:nth-child(12) {
+  --genshin-item-tail-length: 6.05em;
+  --top-offset: 13.15vh;
+  --fall-duration: 8.954s;
+  --fall-delay: 8.51s;
+}
+.genshin-item:nth-child(13) {
+  --genshin-item-tail-length: 6.54em;
+  --top-offset: 64.29vh;
+  --fall-duration: 6.121s;
+  --fall-delay: 2.066s;
+}
+.genshin-item:nth-child(14) {
+  --genshin-item-tail-length: 7.2em;
+  --top-offset: 85.46vh;
+  --fall-duration: 6.415s;
+  --fall-delay: 6.52s;
+}
+.genshin-item:nth-child(15) {
+  --genshin-item-tail-length: 6.06em;
+  --top-offset: 23.33vh;
+  --fall-duration: 9.931s;
+  --fall-delay: 4.737s;
+}
+.genshin-item:nth-child(16) {
+  --genshin-item-tail-length: 5.91em;
+  --top-offset: 55.61vh;
+  --fall-duration: 11.376s;
+  --fall-delay: 4.629s;
+}
+.genshin-item:nth-child(17) {
+  --genshin-item-tail-length: 7.35em;
+  --top-offset: 60.25vh;
+  --fall-duration: 8.194s;
+  --fall-delay: 4.58s;
+}
+.genshin-item:nth-child(18) {
+  --genshin-item-tail-length: 6.18em;
+  --top-offset: 28.24vh;
+  --fall-duration: 8.578s;
+  --fall-delay: 0.464s;
+}
+.genshin-item:nth-child(19) {
+  --genshin-item-tail-length: 6.73em;
+  --top-offset: 75.88vh;
+  --fall-duration: 9.793s;
+  --fall-delay: 6.539s;
+}
+.genshin-item:nth-child(20) {
+  --genshin-item-tail-length: 5.22em;
+  --top-offset: 65.14vh;
+  --fall-duration: 9.176s;
+  --fall-delay: 6.984s;
+}
+.genshin-item:nth-child(21) {
+  --genshin-item-tail-length: 7.13em;
+  --top-offset: 67.74vh;
+  --fall-duration: 6.802s;
+  --fall-delay: 2.304s;
+}
+.genshin-item:nth-child(22) {
+  --genshin-item-tail-length: 7.03em;
+  --top-offset: 68.65vh;
+  --fall-duration: 11.243s;
+  --fall-delay: 3.147s;
+}
+.genshin-item:nth-child(23) {
+  --genshin-item-tail-length: 5.84em;
+  --top-offset: 93.15vh;
+  --fall-duration: 7.5s;
+  --fall-delay: 0.193s;
+}
+.genshin-item:nth-child(24) {
+  --genshin-item-tail-length: 7.1em;
+  --top-offset: 14.5vh;
+  --fall-duration: 10.067s;
+  --fall-delay: 6.331s;
+}
+.genshin-item:nth-child(25) {
+  --genshin-item-tail-length: 6.91em;
+  --top-offset: 56.63vh;
+  --fall-duration: 7.79s;
+  --fall-delay: 2.755s;
+}
+.genshin-item:nth-child(26) {
+  --genshin-item-tail-length: 5.04em;
+  --top-offset: 30.38vh;
+  --fall-duration: 9.377s;
+  --fall-delay: 9.95s;
+}
+.genshin-item:nth-child(27) {
+  --genshin-item-tail-length: 5.82em;
+  --top-offset: 76.08vh;
+  --fall-duration: 11.353s;
+  --fall-delay: 4.852s;
+}
+.genshin-item:nth-child(28) {
+  --genshin-item-tail-length: 7.1em;
+  --top-offset: 14.93vh;
+  --fall-duration: 8.383s;
+  --fall-delay: 4.1s;
+}
+.genshin-item:nth-child(29) {
+  --genshin-item-tail-length: 6.47em;
+  --top-offset: 76.01vh;
+  --fall-duration: 8.622s;
+  --fall-delay: 2.666s;
+}
+.genshin-item:nth-child(30) {
+  --genshin-item-tail-length: 6.03em;
+  --top-offset: 66.39vh;
+  --fall-duration: 11.645s;
+  --fall-delay: 4.942s;
+}
+.genshin-item:nth-child(31) {
+  --genshin-item-tail-length: 7.12em;
+  --top-offset: 49.79vh;
+  --fall-duration: 9.567s;
+  --fall-delay: 8.36s;
+}
+.genshin-item:nth-child(32) {
+  --genshin-item-tail-length: 6.1em;
+  --top-offset: 90.57vh;
+  --fall-duration: 10.468s;
+  --fall-delay: 7.783s;
+}
+.genshin-item:nth-child(33) {
+  --genshin-item-tail-length: 6.2em;
+  --top-offset: 31.1vh;
+  --fall-duration: 10.947s;
+  --fall-delay: 6.075s;
+}
+.genshin-item:nth-child(34) {
+  --genshin-item-tail-length: 6.06em;
+  --top-offset: 10.85vh;
+  --fall-duration: 11.868s;
+  --fall-delay: 2.976s;
+}
+.genshin-item:nth-child(35) {
+  --genshin-item-tail-length: 5.85em;
+  --top-offset: 73.07vh;
+  --fall-duration: 9.872s;
+  --fall-delay: 6.642s;
+}
+.genshin-item:nth-child(36) {
+  --genshin-item-tail-length: 6.51em;
+  --top-offset: 91.75vh;
+  --fall-duration: 7.239s;
+  --fall-delay: 7.917s;
+}
+.genshin-item:nth-child(37) {
+  --genshin-item-tail-length: 6.73em;
+  --top-offset: 97.1vh;
+  --fall-duration: 10.127s;
+  --fall-delay: 0.272s;
+}
+.genshin-item:nth-child(38) {
+  --genshin-item-tail-length: 7.01em;
+  --top-offset: 88.13vh;
+  --fall-duration: 6.159s;
+  --fall-delay: 8.488s;
+}
+.genshin-item:nth-child(39) {
+  --genshin-item-tail-length: 7.12em;
+  --top-offset: 56.69vh;
+  --fall-duration: 9.042s;
+  --fall-delay: 4.524s;
+}
+.genshin-item:nth-child(40) {
+  --genshin-item-tail-length: 6.56em;
+  --top-offset: 73.97vh;
+  --fall-duration: 7.423s;
+  --fall-delay: 7.637s;
+}
+.genshin-item:nth-child(41) {
+  --genshin-item-tail-length: 5.34em;
+  --top-offset: 35.95vh;
+  --fall-duration: 11.804s;
+  --fall-delay: 6.246s;
+}
+.genshin-item:nth-child(42) {
+  --genshin-item-tail-length: 6.95em;
+  --top-offset: 81.73vh;
+  --fall-duration: 10.776s;
+  --fall-delay: 1.919s;
+}
+.genshin-item:nth-child(43) {
+  --genshin-item-tail-length: 7.25em;
+  --top-offset: 36.2vh;
+  --fall-duration: 9.696s;
+  --fall-delay: 3.156s;
+}
+.genshin-item:nth-child(44) {
+  --genshin-item-tail-length: 5.16em;
+  --top-offset: 21.81vh;
+  --fall-duration: 7.981s;
+  --fall-delay: 5.547s;
+}
+.genshin-item:nth-child(45) {
+  --genshin-item-tail-length: 6.44em;
+  --top-offset: 71.46vh;
+  --fall-duration: 6.121s;
+  --fall-delay: 3.617s;
+}
+.genshin-item:nth-child(46) {
+  --genshin-item-tail-length: 5.21em;
+  --top-offset: 75.09vh;
+  --fall-duration: 6.723s;
+  --fall-delay: 1.475s;
+}
+.genshin-item:nth-child(47) {
+  --genshin-item-tail-length: 6.3em;
+  --top-offset: 69.18vh;
+  --fall-duration: 6.967s;
+  --fall-delay: 2.482s;
+}
+.genshin-item:nth-child(48) {
+  --genshin-item-tail-length: 5.67em;
+  --top-offset: 68.81vh;
+  --fall-duration: 10.447s;
+  --fall-delay: 0.672s;
+}
+.genshin-item:nth-child(49) {
+  --genshin-item-tail-length: 7.24em;
+  --top-offset: 43.12vh;
+  --fall-duration: 10.008s;
+  --fall-delay: 7.206s;
+}
+.genshin-item:nth-child(50) {
+  --genshin-item-tail-length: 5.53em;
+  --top-offset: 67.59vh;
+  --fall-duration: 8.706s;
+  --fall-delay: 8.73s;
+}
+.genshin-item::before,
+.genshin-item::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: calc(var(--genshin-item-width) / -2);
+  width: var(--genshin-item-width);
+  height: 100%;
+  background: linear-gradient(45deg, transparent, currentColor, transparent);
+  border-radius: inherit;
+  animation: blink 2s linear infinite;
+}
+.genshin-item::before {
+  transform: rotate(45deg);
+}
+.genshin-item::after {
+  transform: rotate(-45deg);
+}
+
+@keyframes fall {
+  to {
+    transform: translate3d(-30em, 0, 0);
+  }
+}
+@keyframes tail-fade {
+  0%,
+  50% {
+    width: var(--genshin-item-tail-length);
+    opacity: 1;
+  }
+  70%,
+  80% {
+    width: 0;
+    opacity: 0.4;
+  }
+  100% {
+    width: 0;
+    opacity: 0;
+  }
+}
+@keyframes blink {
+  50% {
+    opacity: 0.6;
+  }
+}
+@font-face {
+  font-family: genshinFont;
+  src: url(./font/ja-jp.ttf);
+}
+.count-box {
+  height: 120px;
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  background-color: rgba(255, 255, 255, 0.26);
+  backdrop-filter: blur(5px);
+  z-index: 1;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+.count--content {
+  font-family: genshinFont;
+  font-size: 50px;
+  position: absolute;
+  display: flex;
+  margin: auto;
+  padding: 28px 0;
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 1.2);
+}
+/* # sourceMappingURL=base.css.map */
