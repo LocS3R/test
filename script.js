@@ -1,7 +1,7 @@
 const time = document.querySelector(".count--content");
 // 2023/4/11
 var current = new Date();
-var dNow = current.getDate() + 1;
+var dNow = current.getDate();
 var mNow = current.getMonth() + 1;
 var yNow = current.getFullYear();
 let date_1 = new Date("4/11/2023");
